@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Coaching Center - Excellence in Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --text-color: #333;
+            --hover-shadow: rgba(0,0,0,0.15);
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --dark: #1a252f;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2980b9;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), #1a252f);
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: 0;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInFromTop 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.3rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            animation: fadeInFromBottom 1s ease-out forwards 0.3s;
+            opacity: 0;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary), #2980b9);
+            padding: 0.75rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        nav.scrolled {
+            background: rgba(52, 152, 219, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem 1.8rem;
+            margin: 0 0.4rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            transform: translateY(-2px);
+        }
+        
+        nav a:hover::before {
+            width: 60%;
+        }
+        
+        nav a.active {
+            background-color: rgba(255,255,255,0.15);
+        }
+        
+        nav a.active::before {
+            width: 60%;
+            background-color: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 8rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, #f8f9fa);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            animation: slideInFromLeft 1s ease-out forwards 0.5s;
+            opacity: 0;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            animation: slideInFromRight 1s ease-out forwards 0.7s;
+            opacity: 0;
+        }
+        
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            position: relative;
+        }
+        
+        .container h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .container h2::after {
+            content: '';
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        /* Course Cards */
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .course-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            z-index: 2;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .course-card h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .course-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+        
+        .course-card p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .course-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        
+        .course-card ul li {
+            padding: 0.7rem 0;
+            border-bottom: 1px dashed #eee;
+            color: #555;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .course-card ul li:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .course-card ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .course-card ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--success);
+            margin-right: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        .course-card .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .course-card .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        /* Highlight Section */
+        .highlight {
+            background: linear-gradient(135deg, var(--secondary), #2980b9);
+            padding: 5rem 1rem;
+            text-align: center;
+            margin: 4rem 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: 0;
+        }
+        
+        .highlight-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .highlight h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .highlight p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        /* Faculty Section */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .faculty-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .faculty-img {
+            height: 300px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .faculty-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        }
+        
+        .faculty-info {
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .faculty-info h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .faculty-info .subject {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .faculty-info .bio {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .faculty-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .faculty-social a {
+            color: var(--primary);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #f1f1f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faculty-social a:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Results Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .stat-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat-card .number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .stat-card .label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        /* Testimonials */
+        .testimonials-container {
+            margin-top: 3rem;
+            position: relative;
+        }
+        
+        .testimonials {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding: 1rem 0;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .testimonials::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .testimonials::-webkit-scrollbar-thumb {
+            background-color: var(--secondary);
+            border-radius: 4px;
+        }
+        
+        .testimonial {
+            min-width: 350px;
+            padding: 2.5rem;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            scroll-snap-align: start;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .testimonial::before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 5rem;
+            color: rgba(52, 152, 219, 0.1);
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            line-height: 1;
+        }
+        
+        .testimonial .rating {
+            color: var(--warning);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial .text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial .author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+            margin-right: 1rem;
+        }
+        
+        .testimonial .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        
+        .testimonial .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Form */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-right: 1rem;
+            margin-top: 0.3rem;
+        }
+        
+        .contact-item .content h4 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-item .content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #f1f1f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), #1a252f);
+            color: white;
+            padding: 4rem 1rem 2rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .footer-column p {
+            opacity: 0.8;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            transform: translateX(5px);
+            color: var(--accent);
+        }
+        
+        .footer-links i {
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), #c0392b);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #c0392b, var(--accent));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        .btn:hover::before {
+            opacity: 1;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--accent);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary), #2980b9);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn-secondary::before {
+            background: linear-gradient(135deg, #2980b9, var(--secondary));
+        }
+        
+        /* Back to top button */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background: linear-gradient(135deg, var(--secondary), #2980b9);
+            color: white;
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #backToTop:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInFromTop {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes fadeInFromBottom {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 0.9; }
+        }
+        
+        @keyframes slideInFromLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInFromRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 0.9; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Floating elements */
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+            
+            .container h2 {
+                font-size: 2.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .hero {
+                padding: 6rem 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            nav {
+                padding: 0.5rem;
+                justify-content: flex-start;
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            nav a {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .container {
+                padding: 3rem 1rem;
+            }
+            
+            .container h2 {
+                font-size: 2rem;
+            }
+            
+            .highlight h2 {
+                font-size: 2.2rem;
+            }
+            
+            .testimonial {
+                min-width: 280px;
+                padding: 1.5rem;
+            }
+            
+            /* Reset animations for smaller screens if they become distracting */
+            header h1, header p, .hero h2, .hero p, .hero .btn {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.8rem;
+                font-size: 1rem;
+            }
+            
+            .course-card, .contact-info, .contact-form {
+                padding: 1.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* Review System Styles */
+.review-system {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.review-form-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.review-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.star-rating {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.star-rating i {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0 0.2rem;
+}
+
+.star-rating i:hover,
+.star-rating i:hover ~ i,
+.star-rating i.selected,
+.star-rating i.selected ~ i {
+    color: var(--warning);
+}
+
+.all-reviews {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sort-options select {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.review-card {
+    background-color: var(--light);
+    border-radius: 10px;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.review-card::before {
+    content: '\201C';
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    color: rgba(52, 152, 219, 0.1);
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    line-height: 1;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.review-author {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.review-class {
+    color: var(--secondary);
+    font-style: italic;
+}
+
+.review-date {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.review-rating {
+    color: var(--warning);
+    margin: 0.5rem 0;
+}
+
+.review-text {
+    color: #555;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pagination button {
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+    .reviews-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .review-form-container,
+    .all-reviews {
+        padding: 1.5rem;
+    }
+}
+
+
+   /* Add to your CSS section */
+.location-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.location-info {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.location-map {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.location-info h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.location-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.location-info .btn {
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .location-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+   .location-info {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+}     
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Unique Coaching Center</h1>
+        <p>Where Learning Meets Excellence</p>
+    </header>
+    
+    <!-- Update your nav section to include the location link -->
+<nav id="mainNav">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#courses">Courses</a>
+    <a href="#faculty">Faculty</a>
+    <a href="#results">Results</a>
+    
+    <a href="#location">Location</a> <!-- Added this line -->
+    <a href="#contact">Contact</a>
+    <a href="#admission">Admissions</a>
+</nav>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Empowering Students for Academic Success</h2>
+            <p>Personalized coaching for classes 5-12 with proven results</p>
+            <div class="hero-buttons">
+                <a href="#admission" class="btn floating">Enroll Now</a>
+                <a href="#contact" class="btn btn-outline floating" style="margin-left: 1rem;">Contact Us</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container" id="about">
+        <h2>Why Choose Us?</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">With over 15 years of experience in shaping young minds, Unique Coaching Center provides comprehensive education solutions tailored to each student's needs.</p>
+        
+        <div class="courses">
+            <div class="course-card">
+                <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                <h3>Expert Faculty</h3>
+                <p>Our team of highly qualified educators are specialists in their subjects with years of teaching experience.</p>
+                <ul>
+                    <li>Subject matter experts</li>
+                    <li>Interactive teaching methods</li>
+                    <li>Regular professional development</li>
+                </ul>
+            </div>
+            
+            <div class="course-card">
+                <i class="fas fa-book-open" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                <h3>Comprehensive Curriculum</h3>
+                <p>Well-structured study materials covering all aspects of the syllabus with additional practice resources.</p>
+                <ul>
+                    <li>NCERT + Extra practice</li>
+                    <li>Sample papers solving</li>
+                    <li>Competitive exam preparation</li>
+                </ul>
+            </div>
+            
+            <div class="course-card">
+                <i class="fas fa-user-friends" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                <h3>Personalized Attention</h3>
+                <p>Small batch sizes ensure each student gets the individual attention they need to excel.</p>
+                <ul>
+                    <li>Limited students per batch</li>
+                    <li>One-on-one doubt sessions</li>
+                    <li>Regular progress tracking</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="highlight">
+        <div class="highlight-content">
+            <h2>Our Specialized Programs</h2>
+            <p>Tailored coaching programs designed to maximize student potential across all academic levels</p>
+            <a href="#courses" class="btn btn-outline">Explore Courses</a>
+        </div>
+    </section>
+    
+    <section class="container" id="courses">
+        <h2>Our Courses</h2>
+        <div class="courses">
+            <div class="course-card">
+                <h3>Classes 5-8 (All Subjects)</h3>
+                <p>Building strong foundations in Mathematics, Science, English, and Social Studies with interactive learning methods.</p>
+                <ul>
+                    <li>Conceptual clarity</li>
+                    <li>Activity-based learning</li>
+                    <li>Regular assessments</li>
+                    <li>Creative thinking development</li>
+                    <li>Homework support</li>
+                </ul>
+                <div class="course-meta">
+                    <span class="price">₹</span>
+                    <a href="#admission" class="btn">Enroll Now</a>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <h3>Classes 9-10 (Mathematics & Science)</h3>
+                <p>Comprehensive preparation for board exams with emphasis on problem-solving and application-based learning.</p>
+                <ul>
+                    <li>NCERT + Extra practice</li>
+                    <li>Sample papers solving</li>
+                    <li>Competitive exam preparation</li>
+                    <li>Practical lab sessions</li>
+                    <li>Doubt clearing classes</li>
+                </ul>
+                <div class="course-meta">
+                    <span class="price">₹</span>
+                    <a href="#admission" class="btn">Enroll Now</a>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <h3>Classes 11-12 (Commerce Stream)</h3>
+                <p>Specialized coaching in Accountancy, Business Studies, and Economics with practical application focus.</p>
+                <ul>
+                    <li>CBSE/State board aligned</li>
+                    <li>Case study approach</li>
+                    <li>Project work guidance</li>
+                    <li>Numerical problem solving</li>
+                    <li>Exam strategy sessions</li>
+                </ul>
+                <div class="course-meta">
+                    <span class="price">₹</span>
+                    <a href="#admission" class="btn">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container" id="faculty">
+        <h2>Our Expert Faculty</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Meet our team of dedicated educators with years of experience in their respective fields.</p>
+        
+        <div class="faculty-grid">
+            <div class="faculty-card">
+                <div class="faculty-img" style="background-image: url('./public/file:/WhatsApp\ Image\ 2025-07-10\ at\ 12.01.26\ PM.jpeg');"></div>
+                <div class="faculty-info">
+                    <h3>Mr. </h3>
+                    <span class="subject">All Subjects (5-8)</span>
+                    <p class="bio">  Specializes in making complex concepts simple with unique teaching methodologies.</p>
+                    <div class="faculty-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faculty-card">
+                <div class="faculty-img" style="background-image: url('');"></div>
+                <div class="faculty-info">
+                    <h3>Ms. </h3>
+                    <span class="subject">Maths and Science (9-10)</span>
+                    <p class="bio">  Specializes in board exam preparation with focus on numerical problems and practical applications.</p>
+                    <div class="faculty-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faculty-card">
+                <div class="faculty-img" style="background-image: url('./public/file:/WhatsApp\ Image\ 2025-07-10\ at\ 11.53.09\ AM.jpeg');"></div>
+                <div class="faculty-info">
+                    <h3>Ms. Tejrani</h3>
+                    <span class="subject">Accountancy and Business(11-12)</span>
+                    <p class="bio"> 15 years of teaching and industry experience. Brings real-world examples to classroom teaching.</p>
+                    <div class="faculty-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            
+    </section>
+    
+    <section class="container" id="results">
+        <h2>Our Results</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Consistent outstanding performance from our students year after year</p>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <i class="fas fa-percentage"></i>
+                <div class="number">95%+</div>
+                <div class="label">Pass Rate</div>
+            </div>
+            
+            <div class="stat-card">
+                <i class="fas fa-user-graduate"></i>
+                <div class="number">30%</div>
+                <div class="label">Above 90% in Boards</div>
+            </div>
+            
+            <div class="stat-card">
+                <i class="fas fa-medal"></i>
+                <div class="number">50+</div>
+                <div class="label">School Toppers</div>
+            </div>
+            
+            <div class="stat-card">
+                <i class="fas fa-award"></i>
+                <div class="number">100%</div>
+                <div class="label">Satisfaction Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this after the Results section -->
+<section class="container" id="location">
+    <h2>Our Location</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Visit us at our conveniently located center in Faridabad</p>
+    
+    <div class="location-info">
+        <h3>Unique Coaching Center</h3>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="content">
+                <p>Sanjay Colony, Sector 23<br>Near Rajendra Chowk<br>Faridabad, Haryana 121005</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div class="content">
+                <h4>Opening Hours</h4>
+                <p>Monday-Saturday: 8:00 AM - 8:00 PM<br>Sunday: Closed</p>
+            </div>
+        </div>
+        <a href="https://www.google.com/maps?q=28.355443585791164,77.29840861698027" class="btn" target="_blank">
+            <i class="fas fa-map-marked-alt"></i> View Location
+        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=28.355443585791164,77.29840861698027" class="btn" target="_blank" style="margin-top: 10px;">
+            <i class="fas fa-directions"></i> Get Directions
+        </a>
+    </div>
+</section>    
+    <!-- Replace the entire Testimonials section with this: -->
+    
+
+    <!-- Review Section -->
+            
+            <div class="reviews-container" id="reviewsContainer">
+                <!-- Reviews will be dynamically inserted here -->
+            </div>
+            
+            <div class="pagination">
+                <button id="prevPage" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <span id="pageInfo">Page 1 of 1</span>
+                <button id="nextPage" disabled>Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="highlight">
+        <div class="highlight-content">
+            <h2>Ready to Join Us?</h2>
+            <p>Take the first step towards academic excellence with our proven coaching methodology</p>
+            <a href="#admission" class="btn">Start Admission Process</a>
+        </div>
+    </section>
+    
+    <section class="container" id="admission">
+        <h2>Admission Process</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Our simple 5-step process to get started with your learning journey</p>
+        
+        <div class="courses">
+            <div class="course-card" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                <ol style="display: inline-block; text-align: left; max-width: 600px; margin: 0 auto;">
+                    <li style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px dashed #eee;">
+                        <strong>Fill out the registration form</strong><br>
+                        Complete our simple online or offline form with basic details
+                    </li>
+                    <li style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px dashed #eee;">
+                        <strong>Attend a free demo class</strong><br>
+                        Experience our teaching methodology firsthand
+                    </li>
+                    <li style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px dashed #eee;">
+                        <strong>Take our diagnostic assessment</strong><br>
+                        Help us understand your current level and learning needs
+                    </li>
+                    <li style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px dashed #eee;">
+                        <strong>Get personalized learning plan</strong><br>
+                        We create a customized study plan based on your assessment
+                    </li>
+                    <li>
+                        <strong>Begin your journey to excellence</strong><br>
+                        Start attending regular classes and watch your performance improve
+                    </li>
+                </ol>
+                
+                <div style="margin-top: 3rem;">
+                    <a href="#contact" class="btn btn-secondary">Schedule a Visit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container" id="contact">
+        <h2>Contact Us</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">We'd love to hear from you. Reach out for any inquiries or to schedule a visit.</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="content">
+                            <h4>Address</h4>
+                            <p>Sanjay colony , Sector 23 , Near Rajendra Chowk, Faridabad, PIN - 121005</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="content">
+                            <h4>Phone</h4>
+                            <p>+91 8800716436</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="content">
+                            <h4>Email</h4>
+                            <p>info@uniquecoaching.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="content">
+                            <h4>Timings</h4>
+                            <p>Monday-Saturday, 8AM-8PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 2rem;">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+  <h3>Send us a Message</h3>
+  <form id="contactForm">
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="from_name" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="reply_to" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <select id="subject" name="subject" class="form-control" required>
+        <option value="">Select Subject</option>
+        <option value="admission">Admission Inquiry</option>
+        <option value="course">Course Information</option>
+        <option value="feedback">Feedback</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+  </form>
+</div>
+
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Unique Coaching Center has been providing quality education since 2008, helping thousands of students achieve academic excellence.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#courses"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                    <li><a href="#faculty"><i class="fas fa-chevron-right"></i> Faculty</a></li>
+                    <li><a href="#results"><i class="fas fa-chevron-right"></i> Results</a></li>
+                    <li><a href="#admission"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Sanjay colony , Sector 23 , Faridabad , PIN 121005</a></li>
+                    <li><a href="tel:+918800716436"><i class="fas fa-phone-alt"></i> +91 8800716436</a></li>
+                    <li><a href="mailto:info@uniquecoaching.com"><i class="fas fa-envelope"></i> info@uniquecoaching.com</a></li>
+                    <li><i class="fas fa-clock"></i> Mon-Sat: 8AM-8PM</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Unique Coaching Center. All Rights Reserved.</p>
+            <p>Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for quality education</p>
+        </div>
+    </footer>
+
+    <button onclick="topFunction()" id="backToTop" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Include EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("QZyREh29cMz9rrUp5");
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+    "service_w7j05hm"   ,      // ✅ Your Service ID
+      "template_a8vnl4t",        // ✅ Your Template ID
+      this
+    )
+    .then(() => {
+      alert("✅ Message sent successfully!");
+      this.reset();
+    })
+    .catch((error) => {
+      console.error("❌ Failed to send email:", error);
+      alert("Failed to send email. " + JSON.stringify(error));
+    });
+  });
+</script>
+
+    <script>
+        // Current Year in Footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Calculate offset for sticky header
+                    const headerOffset = document.querySelector('nav').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Update active nav link
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.onscroll = function() {
+            scrollFunction();
+            stickyNavbar();
+            highlightNavLink();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Sticky Navbar functionality
+        const navbar = document.getElementById('mainNav');
+
+        function stickyNavbar() {
+            if (window.pageYOffset > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Active link highlighting functionality
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+
+        function highlightNavLink() {
+            let currentActive = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navbar.offsetHeight - 100;
+                const sectionHeight = section.clientHeight;
+
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    currentActive = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(currentActive)) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Intersection Observer for animations
+        const animateElements = document.querySelectorAll('.course-card, .faculty-card, .stat-card, .testimonial, .contact-info, .contact-form');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        animateElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(element);
+        });
+
+        // Testimonial navigation
+        const testimonials = document.querySelector('.testimonials');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        testimonials.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - testimonials.offsetLeft;
+            scrollLeft = testimonials.scrollLeft;
+            testimonials.style.cursor = 'grabbing';
+        });
+
+        testimonials.addEventListener('mouseleave', () => {
+            isDown = false;
+            testimonials.style.cursor = 'grab';
+        });
+
+        testimonials.addEventListener('mouseup', () => {
+            isDown = false;
+            testimonials.style.cursor = 'grab';
+        });
+
+        testimonials.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - testimonials.offsetLeft;
+            const walk = (x - startX) * 2;
+            testimonials.scrollLeft = scrollLeft - walk;
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For demo purposes, we'll just show an alert
+            alert(`Thank you, ${name}! Your message about "${subject}" has been received. We'll contact you at ${email} soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Call highlightNavLink on load to set initial active state
+        window.addEventListener('load', highlightNavLink);
+        
+        // Initialize floating animations
+        const floatingElements = document.querySelectorAll('.floating');
+        floatingElements.forEach(el => {
+            el.style.animationDelay = `${Math.random() * 0.5}s`;
+        });
+
+        // Review System Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load reviews from localStorage or initialize with defaults
+            let reviews = JSON.parse(localStorage.getItem('uniqueCoachingReviews')) || [
+                {
+                    id: 1,
+                    name: "Rahul Verma",
+                    class: "Class 10 (2023)",
+                    rating: 5,
+                    text: "The teachers at Unique Coaching Center helped me understand concepts rather than just memorize them. Their doubt sessions were especially helpful in my Class 10 board preparation.",
+                    date: "2023-06-15"
+                },
+                {
+                    id: 2,
+                    name: "Ananya Singh",
+                    class: "Class 12 Commerce",
+                    rating: 5,
+                    text: "The faculty's guidance on presentation and case studies helped me score exceptionally well in my boards. I got 98 in Accountancy thanks to their teaching methods.",
+                    date: "2023-05-22"
+                },
+                {
+                    id: 3,
+                    name: "Mr. Kumar",
+                    class: "Parent of Aditya (Class 8)",
+                    rating: 4,
+                    text: "My son's performance improved dramatically within 3 months of joining. The personalized attention and regular progress reports make all the difference.",
+                    date: "2023-07-10"
+                }
+            ];
+
+            // DOM elements
+            const reviewForm = document.getElementById('reviewForm');
+            const reviewsContainer = document.getElementById('reviewsContainer');
+            const sortSelect = document.getElementById('sortReviews');
+            const prevPageBtn = document.getElementById('prevPage');
+            const nextPageBtn = document.getElementById('nextPage');
+            const pageInfo = document.getElementById('pageInfo');
+            
+            // Pagination variables
+            let currentPage = 1;
+            const reviewsPerPage = 5;
+            let totalPages = Math.ceil(reviews.length / reviewsPerPage);
+            
+            // Star rating functionality
+            const stars = document.querySelectorAll('.star-rating i');
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    document.getElementById('reviewRating').value = rating;
+                    
+                    stars.forEach(s => {
+                        s.classList.remove('selected');
+                        s.classList.remove('fas');
+                        s.classList.add('far');
+                    });
+                    
+                    for (let i = 0; i < rating; i++) {
+                        stars[i].classList.add('selected', 'fas');
+                        stars[i].classList.remove('far');
+                    }
+                });
+            });
+            
+            // Form submission
+            reviewForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('reviewName').value;
+                const studentClass = document.getElementById('reviewClass').value;
+                const rating = parseInt(document.getElementById('reviewRating').value);
+                const text = document.getElementById('reviewText').value;
+                
+                if (rating === 0) {
+                    alert('Please select a rating');
+                    return;
+                }
+                
+                // Create new review object
+                const newReview = {
+                    id: Date.now(), // Using timestamp as ID
+                    name: name,
+                    class: studentClass,
+                    rating: rating,
+                    text: text,
+                    date: new Date().toISOString().split('T')[0] // YYYY-MM-DD format
+                };
+                
+                // Add to reviews array
+                reviews.unshift(newReview);
+                
+                // Save to localStorage
+                localStorage.setItem('uniqueCoachingReviews', JSON.stringify(reviews));
+                
+                // Reset form
+                reviewForm.reset();
+                stars.forEach(star => {
+                    star.classList.remove('selected', 'fas');
+                    star.classList.add('far');
+                });
+                document.getElementById('reviewRating').value = 0;
+                
+                // Re-render reviews
+                currentPage = 1;
+                renderReviews();
+                
+                alert('Thank you for your review! It has been submitted successfully.');
+            });
+            
+            // Sort functionality
+            sortSelect.addEventListener('change', function() {
+                currentPage = 1;
+                renderReviews();
+            });
+            
+            // Pagination functionality
+            prevPageBtn.addEventListener('click', function() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderReviews();
+                }
+            });
+            
+            nextPageBtn.addEventListener('click', function() {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderReviews();
+                }
+            });
+            
+            // Render reviews function
+            function renderReviews() {
+                // Clear container
+                reviewsContainer.innerHTML = '';
+                
+                // Sort reviews based on selected option
+                let sortedReviews = [...reviews];
+                const sortBy = sortSelect.value;
+                
+                switch(sortBy) {
+                    case 'newest':
+                        sortedReviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+                        break;
+                    case 'oldest':
+                        sortedReviews.sort((a, b) => new Date(a.date) - new Date(b.date));
+                        break;
+                    case 'highest':
+                        sortedReviews.sort((a, b) => b.rating - a.rating);
+                        break;
+                    case 'lowest':
+                        sortedReviews.sort((a, b) => a.rating - b.rating);
+                        break;
+                }
+                
+                // Calculate pagination
+                totalPages = Math.ceil(sortedReviews.length / reviewsPerPage);
+                const startIndex = (currentPage - 1) * reviewsPerPage;
+                const endIndex = startIndex + reviewsPerPage;
+                const paginatedReviews = sortedReviews.slice(startIndex, endIndex);
+                
+                // Render each review
+                if (paginatedReviews.length === 0) {
+                    reviewsContainer.innerHTML = '<p>No reviews yet. Be the first to review!</p>';
+                } else {
+                    paginatedReviews.forEach(review => {
+                        const reviewCard = document.createElement('div');
+                        reviewCard.className = 'review-card';
+                        
+                        // Create stars HTML
+                        let starsHtml = '';
+                        for (let i = 1; i <= 5; i++) {
+                            starsHtml += i <= review.rating 
+                                ? '<i class="fas fa-star"></i>' 
+                                : '<i class="far fa-star"></i>';
+                        }
+                        
+                        reviewCard.innerHTML = `
+                            <div class="review-header">
+                                <div>
+                                    <span class="review-author">${review.name}</span>
+                                    <span class="review-class">${review.class}</span>
+                                </div>
+                                <span class="review-date">${formatDate(review.date)}</span>
+                            </div>
+                            <div class="review-rating">${starsHtml}</div>
+                            <p class="review-text">${review.text}</p>
+                        `;
+                        
+                        reviewsContainer.appendChild(reviewCard);
+                    });
+                }
+                
+                // Update pagination controls
+                pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+                prevPageBtn.disabled = currentPage === 1;
+                nextPageBtn.disabled = currentPage === totalPages;
+            }
+            
+            // Helper function to format date
+            function formatDate(dateString) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return new Date(dateString).toLocaleDateString(undefined, options);
+            }
+            
+            // Initial render
+            renderReviews();
+        });
+
+      
+      
+          </script>
+</body>
+</html>   
